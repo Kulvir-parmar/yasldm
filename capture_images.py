@@ -23,8 +23,7 @@ for label in labels:
     for num_img in range(num_images):
         ret, frame = cap.read()
 
-        name = f"label + '.' + '{str(uuid.uuid1())}.jpg'"
-        image_name = os.path.join(IMAGE_PATH, label, name)
+        image_name = os.path.join(IMAGE_PATH, label, label + '.' + '{}.jpg'.format(str(uuid.uuid1())))
 
         cv2.imwrite(image_name, frame)
         cv2.imshow("frame", frame)
